@@ -1,6 +1,7 @@
+-- contains all queries used in the applicationz
+
 -- addOwner 
 INSERT INTO owners (full_name, email) VALUES("govcind", "kjsdc");
-
 
 -- addProduct
 INSERT INTO products (owner_id, product_name , description, price, quantity)

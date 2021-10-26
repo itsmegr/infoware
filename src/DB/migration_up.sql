@@ -1,3 +1,6 @@
+-- contains code for migrating the db
+-- for this small application i did manually, this process can alsoo be automated
+
 CREATE TABLE `owners` (
   `owner_id` int PRIMARY KEY AUTO_INCREMENT,
   `full_name` varchar(255) NOT NULL,

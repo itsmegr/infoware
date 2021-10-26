@@ -9,6 +9,7 @@ import {
 import { addProduct, addProductArgs } from "../services/product";
 import RouteHandler from "./RouteHadlerType";
 
+//adding owner account
 export const postAddAccoount: RouteHandler = async (req, res, next) => {
   try {
     //getting the data
@@ -27,6 +28,8 @@ export const postAddAccoount: RouteHandler = async (req, res, next) => {
     next(err);
   }
 };
+
+//handling add product request by owner
 export const postAddProduct: RouteHandler = async (req, res, next) => {
   try {
     //   getting the data from request
@@ -46,6 +49,8 @@ export const postAddProduct: RouteHandler = async (req, res, next) => {
     next(err);
   }
 };
+
+//getting all the orders of owner,who created the products
 export const getorders: RouteHandler = async (req, res, next) => {
   try {
       let owner_id : number = req.body.owner_id;

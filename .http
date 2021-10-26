@@ -7,8 +7,14 @@ Content-Type: application/json
     "login_password" : "123456"
 }
 
+
+
+
 ### Logout
 GET http://localhost:3000/consumer/logout
+
+
+
 
 ### add consumer account
 POST http://localhost:3000/consumer/addAccount
@@ -20,8 +26,14 @@ Content-Type: application/json
     "login_password" : "123455"
 }
 
+
+
+
 ### See all products
 GET http://localhost:3000/consumer/products
+
+
+
 
 ### order the product
 POST http://localhost:3000/consumer/order
@@ -34,8 +46,11 @@ Content-Type: application/json
 }
 
 
+
+
 ### See all orders
 GET http://localhost:3000/consumer/order
+
 
 
 
@@ -47,6 +62,8 @@ Content-Type: application/json
     "full_name" : "kdsjbv",
     "email" : "nmbskjdhvf"
 }
+
+
 
 #### Post addProduct
 POST http://localhost:3000/owner/addProduct
@@ -61,6 +78,8 @@ Content-Type: application/json
 }
 
 
+
+
 ### get orders
 POST http://localhost:3000/owner/orders
 Content-Type: application/json
@@ -68,4 +87,6 @@ Content-Type: application/json
 {
     "owner_id": 25
 }
+
+
 

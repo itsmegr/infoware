@@ -13,36 +13,8 @@ import {
 import { getAllProducts, getProductById, IProduct } from "../services/product";
 import RouteHandler from "./RouteHadlerType";
 
-export const postLogin: RouteHandler = async (req, res, next) => {
-  try {
-    //get the email and password
-    let email: string = req.body.email;
-    let pass: string = req.body.login_password;
-    let sessionData: ISession = await performLogin(email, pass);
-    req.session.userData = sessionData;
-    res.status(200);
-    res.json({
-      status: 200,
-      ...sessionData,
-    });
-  } catch (error) {
-    next(error);
-  }
-};
 
-export const getLogout: RouteHandler = async (req, res, next) => {
-  try {
-    req.session.userData = undefined;
-    res.status(200);
-    res.send({
-      status: 200,
-      msg: "logged out successfully",
-    });
-  } catch (error) {
-    next(error);
-  }
-};
-
+//for creating customer account
 export const postAddAccoount: RouteHandler = async (req, res, next) => {
   try {
     let arg: addCustomerAccountArgs = {
@@ -60,6 +32,39 @@ export const postAddAccoount: RouteHandler = async (req, res, next) => {
   }
 };
 
+//handling log in request
+export const postLogin: RouteHandler = async (req, res, next) => {
+  try {
+    //get the email and password
+    let email: string = req.body.email;
+    let pass: string = req.body.login_password;
+    let sessionData: ISession = await performLogin(email, pass);
+    req.session.userData = sessionData;
+    res.status(200);
+    res.json({
+      status: 200,
+      ...sessionData,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+//handling logout
+export const getLogout: RouteHandler = async (req, res, next) => {
+  try {
+    req.session.userData = undefined;
+    res.status(200);
+    res.send({
+      status: 200,
+      msg: "logged out successfully",
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+//getting all products list to be shown
 export const getProducts: RouteHandler = async (req, res, next) => {
   try {
     let products: IProduct[] = await getAllProducts();
@@ -72,6 +77,7 @@ export const getProducts: RouteHandler = async (req, res, next) => {
   }
 };
 
+//for handling post request to order the products
 export const postOrder: RouteHandler = async (req, res, next) => {
   try {
     //getting the order data
@@ -94,6 +100,7 @@ export const postOrder: RouteHandler = async (req, res, next) => {
   }
 };
 
+// handling the request for getting all the products of user
 export const getOrderOyCustomer: RouteHandler = async (req, res, next) => {
   try {
     let cut_id = req.session.userData == undefined ? 0 : req.session.userData.customer_id;

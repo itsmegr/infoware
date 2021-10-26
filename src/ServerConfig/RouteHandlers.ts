@@ -1,4 +1,4 @@
-import { application, Application } from "express";
+import { Application } from "express";
 import ownerRoutes from "../Routes/Route.Owner"
 import consumerRoutes from "../Routes/Route.Customer"
 function HandleRoutesFor(server: Application) {
