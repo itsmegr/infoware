@@ -1,0 +1,68 @@
+{
+    "/auth": {
+        "/login (POST)": {
+            "body": {
+                "idToken": "obtained id token from the google OAuth"
+            },
+            "res": {
+                "status": 200,
+                "content": "user details"
+            },
+            "error": {
+                "400": "no Id Token Found in request",
+                "401": "id token expired",
+                "422": "email not allowed",
+                "500": "internal server error"
+            }
+        },
+        "/login (GET)": {
+            "res": {
+                "status": 200,
+                "content": "user details"
+            },
+            "error": {
+                "401": "No session found or session expired or the user is wait listed"
+            }
+        },
+        "/logout (DELETE)": {
+            "res": {
+                "status": 200,
+                "message": "logged out"
+            },
+            "error": {
+                "401": "Unauthorized"
+            }
+        }
+    },
+    "/team" : {
+        "/create (POST)" : {
+            "body" : {
+                "teamName" : "team name",
+                "teamDescription" : "team description"
+            },
+            "res" : {
+                "status" : 201,
+                "message" : "Team Created Successfully"
+            },
+            "error" : {
+                "400" : "invalid team name/invalid team description",
+                "405" : "Data already present",
+                "500": "internal server error"
+            }
+        },
+        "/join (POST)" : {
+            "body" : {
+                "teamId" : "team UUID"
+            },
+            "res" : {
+                "status" : 201,
+                "message" : "Team Join Successfully"
+            },
+            "error" : {
+                "400" : "invalid team id",
+                "405" : "Data already present",
+                "500": "internal server error"
+            }
+        }
+    }
+}

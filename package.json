@@ -1,0 +1,41 @@
+{
+  "name": "e_commerce_intern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orted-org/rase_node_app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/orted-org/rase_node_app/issues"
+  },
+  "homepage": "https://github.com/orted-org/rase_node_app#readme",
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/express": "^4.16.1",
+    "@types/express-session": "^1.17.4",
+    "@types/http-errors": "^1.8.1",
+    "@types/morgan": "^1.9.3",
+    "@types/mysql": "^2.15.19",
+    "nodemon": "^2.0.14",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.16.4",
+    "express-session": "^1.17.2",
+    "http-errors": "^1.8.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.2"
+  }
+}
